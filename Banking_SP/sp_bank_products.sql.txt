@@ -1,0 +1,10 @@
+create or replace procedure sp_bank_products(
+p_banks out sys_refcursor , p_bank_prod out sys_refcursor
+)
+as
+begin
+open p_banks for select bank_id , bank_location from ttsbank_banks ;
+open P_bank_prod for select product_id , product_name from ttsbank_products ;
+end ;
+/
+
